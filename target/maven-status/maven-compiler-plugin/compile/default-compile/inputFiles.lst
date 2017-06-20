@@ -1,3 +1,5 @@
-C:\home\chaincode-projects\spring-boot-web-jsp-original\src\main\java\com\mkyong\WebConfiguration.java
-C:\home\chaincode-projects\spring-boot-web-jsp-original\src\main\java\com\mkyong\WelcomeController.java
-C:\home\chaincode-projects\spring-boot-web-jsp-original\src\main\java\com\mkyong\SpringBootWebApplication.java
+C:\home\chaincode-projects\bare-bones\src\main\java\com\config\SpringBootWebApplication.java
+C:\home\chaincode-projects\bare-bones\src\main\java\com\blockchain\Greeter.java
+C:\home\chaincode-projects\bare-bones\src\main\java\com\config\WelcomeController.java
+C:\home\chaincode-projects\bare-bones\src\main\java\com\config\WebConfiguration.java
+C:\home\chaincode-projects\bare-bones\src\main\java\com\blockchain\HelloBlockchainWorld.java
