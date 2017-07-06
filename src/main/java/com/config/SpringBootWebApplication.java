@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-import com.blockchain.HelloBlockchainWorld;
+import com.blockchain.SmartContractTests;
 
 @SpringBootApplication
 public class SpringBootWebApplication extends SpringBootServletInitializer {
@@ -24,9 +24,9 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
 			String path = new File(".").getCanonicalPath();
 			System.out.println(path);
 			
-			HelloBlockchainWorld test = new HelloBlockchainWorld();
-			
-			test.deployAndTest();
+			// BLOCKCHAIN TEST:
+			SmartContractTests test = new SmartContractTests();
+			test.testBankAccount();;
 	}
 
 }

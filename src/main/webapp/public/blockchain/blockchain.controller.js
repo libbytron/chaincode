@@ -7,9 +7,20 @@
 
             $scope.blockchainMessage = '';
 
+            this.$onInit = function(){
+                $blockchain.subscribe(this);
+            }
+
+            
+            this.notify = function(){
+                console.log("notify was called!");
+                $scope.blockchainMessage = $blockchain.getMessage();
+            }
+            
+
             // Language selection tools:
             $scope.getMessage = function() {
-                $scope.blockchainMessage = $blockchain.requestMessage();
+                $blockchain.requestMessage();
             }
 
 

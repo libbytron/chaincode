@@ -19,6 +19,10 @@
           url: '/blockchain',
           templateUrl: '/blockchain/blockchain.html',
         })
+        .state('index', {
+          url: '/index',
+          templateUrl: '/index/analystIndex.html',
+        })
         /*
         .state('login', {
           url: '/login',

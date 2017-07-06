@@ -17,26 +17,10 @@
 
         // service functions:
         function submitSurveyResponse(surveyResponse){
-            var req = {
-                method: 'POST',
-                url: '/response/submit',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                data: surveyResponse
-            }
-
-            console.log(req);
-
-            return $http(req).then(
-                function(response){
-                    console.log(response);
-                },
-                function(error) {
-                    console.log(error);
-                }
-            );
-           
+            $http.post('/response/submit', surveyResponse).then(
+                function successCallback(data){
+                    console.log(data);
+                });
         }
     }
 
