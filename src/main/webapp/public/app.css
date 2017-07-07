@@ -47,6 +47,16 @@ html, body {
 }
 */
 
+.text-area {
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  width: 100%
+}
+
+
+
 .row-card {
   margin: 25px;
   height: 100%;

@@ -8,13 +8,10 @@
     ]).config(function($mdThemingProvider) {
 
         $mdThemingProvider.theme('default')
-            .primaryPalette('grey',{
+            .primaryPalette('blue',{
                 'default': '900'})
-            .accentPalette('grey',{
+            .accentPalette('pink',{
                 'default': '700'})
-            //
-            // .backgroundPalette('black')
-            .dark();
     })
 
 })();

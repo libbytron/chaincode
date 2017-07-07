@@ -6,6 +6,7 @@
         function($scope, $elasticsearch){
 
             $scope.companyList = [];
+            $scope.searchKey = "";
 
             this.$onInit = function() {
                 $scope.getAllOwners().then(
@@ -24,6 +25,16 @@
                  )
             }
 
+
+            $scope.search = function(event){
+                if(event.key === "Enter"){
+                    $elasticsearch.generalCompanySearch($scope.searchKey).then(
+                        function(hits){
+                            $scope.companyList = hits;
+                        }
+                    )
+                }
+            }
 
         }]);
 })();

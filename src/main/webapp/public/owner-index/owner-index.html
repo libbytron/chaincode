@@ -11,7 +11,14 @@
         <div class="em-l-container">
             <div class="em-c-page-header ">
                 <!--<h1 class="em-c-page-header__title">PBA </h1>-->
-                <p class="em-c-page-header__desc">Select a PBA to view the Gas Balancing Statement.</p>
+                <p class="em-c-page-header__desc">PBA Owners</p>
+                <form name="nameform">
+                      <md-input-container>
+                          <md-icon class="material-icons">&#xE8B6;</md-icon>
+                          <label>Search Company </label>
+                          <input type="text" ng-model="searchKey" ng-keydown="search($event)" class="text-area">
+                      </md-input-container>
+                </form>
             </div>
             <!-- end em-c-page-header -->
             <div class="pba-table-block">
@@ -31,9 +38,9 @@
                                 <!-- end em-c-table__header -->
                                 <tbody>
                                     <tr ng-repeat="company in companyList" class="em-c-table__row ">
-                                                <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="" ui-sref="owners({ ownerId: company.id })">
-                                                    {{company.name}}  ({{company.abbreviation}})
-                                                </td> 
+                                        <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="" ui-sref="owners({ ownerId: company.id })">
+                                            {{company.name}} ({{company.abbreviation}})
+                                        </td>
                                     </tr>
                                     <!-- end em-c-table__row -->
                                 </tbody>
@@ -49,6 +56,72 @@
                         <!--end em-c-table-object__body-inner-->
                     </div>
                     <!--end em-c-table-object__body-->
+                    <!--end em-c-table-object__body-->
+                    <!-- PAGED FOOTER THINGY -->
+                    <div class="em-c-table-object__footer">
+                        <div class="em-c-toolbar ">
+                            <div class="em-c-toolbar__item">
+                                50 Items
+                            </div>
+                            <div class="em-c-toolbar__item em-is-aligned-right">
+                                <ol class="em-c-pagination" role="navigation" aria-labelledby="pagination-label">
+                                    <li class="em-c-pagination__item">
+                                        <a class="em-c-pagination__link  em-is-disabled" href="#">
+                                            <svg class="em-c-icon em-c-pagination__icon">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../images/em-icons.svg#icon-caret-left"></use>
+                                            </svg>
+                                        </a>
+                                        <!-- end em-c-pagination__link -->
+                                    </li>
+                                    <!-- end em-c-pagination__item -->
+                                    <li class="em-c-pagination__item">
+                                        <a class="em-c-pagination__link  em-is-current" href="#">
+                
+                
+                                            1
+                
+                                   </a>
+                                        <!-- end em-c-pagination__link -->
+                                    </li>
+                                    <!-- end em-c-pagination__item -->
+                                    <li class="em-c-pagination__item">
+                                        <a class="em-c-pagination__link  " href="#">
+                
+                
+                                            2
+                
+                                   </a>
+                                        <!-- end em-c-pagination__link -->
+                                    </li>
+                                    <!-- end em-c-pagination__item -->
+                                    <li class="em-c-pagination__item">
+                                        <a class="em-c-pagination__link  " href="#">
+                
+                
+                                            3
+                
+                                   </a>
+                                        <!-- end em-c-pagination__link -->
+                                    </li>
+                                    <!-- end em-c-pagination__item -->
+                                    <li class="em-c-pagination__item">
+                                        <a class="em-c-pagination__link  " href="#">
+                                            <svg class="em-c-icon em-c-pagination__icon">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../images/em-icons.svg#icon-caret-right"></use>
+                                            </svg>
+                                        </a>
+                                        <!-- end em-c-pagination__link -->
+                                    </li>
+                                    <!-- end em-c-pagination__item -->
+                                </ol>
+                                <!-- end em-c-pagination -->
+                            </div>
+                            <!-- end em-c-toolbar__item -->
+                        </div>
+                        <!-- end em-c-toolbar -->
+                    </div>
+                    <!--end em-c-table-object__footer -->
+                    <!-- PAGED FOOTER THINGY -->
                 </div>
                 <!--end em-c-table-object-->
             </div>

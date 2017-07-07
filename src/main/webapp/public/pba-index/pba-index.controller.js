@@ -7,6 +7,8 @@
 
             $scope.pbaList = [];
 
+            $scope.searchKey = "";
+
             this.$onInit = function() {
                 $scope.getAllPBAs().then(
                     function(hits){
@@ -22,6 +24,16 @@
                          return hits;
                      }
                  )
+            }
+
+            $scope.search = function(event){
+                if(event.key === "Enter"){
+                    $elasticsearch.generalPBAsearch($scope.searchKey).then(
+                        function(hits){
+                            $scope.pbaList = hits;
+                        }
+                    )
+                }
             }
 
 

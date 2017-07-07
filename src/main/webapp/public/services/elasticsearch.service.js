@@ -18,9 +18,11 @@
             getAllAddresses: getAllAddresses,
             addCompany: addCompany,
             getAllCompanies: getAllCompanies,
+            generalCompanySearch: generalCompanySearch,
             getCompanyById: getCompanyById,
             addPBA: addPBA,
             getAllPBAs: getAllPBAs,
+            generalPBAsearch: generalPBAsearch,
             getPBAsBelongingToCompany: getPBAsBelongingToCompany,
             getPBAbyNameAndId: getPBAbyNameAndId,
             addContract: addContract,
@@ -81,6 +83,20 @@
                 });
         }
 
+        function generalCompanySearch(searchKey){
+            var searchQuery = {
+                "query": {
+                    "simple_query_string" : {
+                        "query": searchKey
+                    }
+                }
+            }
+            return $http.post(elasticsearchURL + '/companies/company/_search', searchQuery).then(
+                function successCallback(response){
+                    return convertHitsToSource(response.data.hits.hits);
+            });
+        }
+
         function getCompanyById(companyId){
             var searchQuery = {
                 query: {
@@ -108,6 +124,20 @@
                 function successCallback(response){
                     return convertHitsToSource(response.data.hits.hits);
                 });
+        }
+
+        function generalPBAsearch(searchKey){
+            var searchQuery = {
+                "query": {
+                    "simple_query_string" : {
+                        "query": searchKey
+                    }
+                }
+            }
+            return $http.post(elasticsearchURL + '/pbas/pba/_search', searchQuery).then(
+                function successCallback(response){
+                    return convertHitsToSource(response.data.hits.hits);
+            });
         }
 
         function getPBAsBelongingToCompany(companyId){
