@@ -1,24 +1,61 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<center>
-<h1>Here is my test sign up page</h1>
-<h2>It's not really a sign up page</h2>
-<h3>Im just making this to test if my button works</h3>
-<h4>If youre seeing this that probably means that my button worked</h4>
-<h5>Be proud of me</h5>
-<h6>(please)</h6>
+    <body>
+      <div ng-controller="testController">
+          <center>
 
 
-<br>
-<br>
+            <md-card class = "big-card">
+                  <center>
+                  <h1>About Me</h1>
 
-<md-button class="md-raised" ui-sref="home" md-theme="default">
-       BACK
-</md-button>
 
-</center>
+                  <md-card class="row-card">
+                    <form name="nameform">
+                      <md-input-container>
+                          <label>What is your name? </label>
+                          <textarea ng-model="name"></textarea>
+                      </md-input-container>
+                    </form>
 
-</body>
+                    <div>Your name is: {{name}}</div>
+                    
+                    
+                  </md-card>
+
+
+
+                  <md-card class="row-card">
+                    <div>
+                      <br>
+                      Select your favorite language:  
+                      <br>
+                        <md-button ng-click="php()" class="md-raised" md-theme="default">PHP</md-button>
+                        <md-button ng-click="javascript()" class="md-raised" md-theme="default">JavaScript</md-button>
+                        <br>
+                        <md-button ng-click="cpp()" class="md-raised" md-theme="default">C++</md-button>
+                        <md-button ng-click="java()" class="md-raised" md-theme="default">Java</md-button>
+
+                      <p> You have selected: {{ myFavLanguage }} </p>
+                    </div>
+                  </md-card>
+
+                  <md-button ng-click="submit()" class="md-raised" md-theme="default">
+                    Submit Form
+                  </md-button>
+
+                  <br><br>
+                  
+                  </center>
+                  
+
+             </md-card>
+
+              <md-button class="md-raised" ui-sref="home" md-theme="default">
+                  BACK
+              </md-button>
+
+          </center>
+        </div>
+    </body>
 </html>

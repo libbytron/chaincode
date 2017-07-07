@@ -28,18 +28,16 @@
   <script src="app.module.js"></script>
   <script src="app.route.js"></script>
 
-  <!-- charts -->
-  <!-- EXAMPLE: <script src="charts/Chart.min.js"></script> -->
-
   <!-- Components -->
   <!-- EXAMPLE: <script src="toolbar/toolbar.component.js"></script> -->
 
   <!-- Controllers -->
-  <!-- EXAMPLE: <script src="home/home.controller.js"></script> -->
-
+  <script src="test/test.controller.js"></script>
+  <script src="blockchain/blockchain.controller.js"></script>
 
   <!-- Services -->
-  <!-- EXAMPLE: <script src="user/user.service.js"></script> -->
+  <script src="services/survey.service.js"></script>
+  <script src="services/blockchain.service.js"></script>
 
   <!-- Form Validation Directives -->
   <!-- EXAMPLE: <script src="validators/contain-uppercase.js"></script> -->
@@ -58,10 +56,17 @@
     
     <center>
     
-    <h1>This is a heading 1</h1>
+    <h1>Tell me about yourself!</h1>
     
     <md-button class="md-raised" ui-sref="sign-up" md-theme="default">
-       Sign-Up
+       Info Form
+    </md-button>
+    <md-button class="md-raised" ui-sref="blockchain" md-theme="default">
+       Blockchain
+    </md-button>
+
+    <md-button class="md-raised" ui-sref="index" md-theme="default">
+       Analyst Index
     </md-button>
     
     </center>
