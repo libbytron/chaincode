@@ -9,8 +9,7 @@
 
       $urlRouterProvider.otherwise('/');
 
-      $stateProvider
-      
+      $stateProvider      
         .state('home', {
           url: '/home',
           templateUrl: '/home/index.html',
@@ -19,21 +18,32 @@
           url: '/blockchain',
           templateUrl: '/blockchain/blockchain.html',
         })
-        .state('index', {
-          url: '/index',
-          templateUrl: '/index/analystIndex.html',
+        .state('pba-index', {
+          url: '/pba-index',
+          templateUrl: '/pba-index/pba-index.html',
+          controller: 'pba-index-controller'
         })
-        /*
-        .state('login', {
-          url: '/login',
-          templateUrl: 'login/login.html',
-          controller: 'loginController',
-          controllerAs: 'login'
+        .state('owner-index', {
+          url: '/owner-index',
+          templateUrl: '/owner-index/owner-index.html',
+          controller: 'owner-index-controller'
         })
-        */
-        
-        .state('sign-up', {
-          url: '/sign-up',
+        .state('owners', {
+          url: '/owners/:ownerId',
+          templateUrl: 'owner-detail/owner-detail.html',
+          controller: 'owner-detail-controller',
+        })
+        .state('pbas', {
+          url: '/pbas/:pbaId/name/:pbaName',
+          params: { 
+            pbaId: "",
+            pbaName: ""
+          },
+          templateUrl: 'pba-detail/pba-detail.html',
+          controller: 'pba-detail-controller',
+        })    
+        .state('test', {
+          url: '/test',
           templateUrl: '/test/test.html',
         });
 

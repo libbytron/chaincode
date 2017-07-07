@@ -75,8 +75,8 @@ public class SmartContractTests {
 			// false for some reason.......?
 			System.out.println(contract.isValid());
 			
-			TransactionReceipt receipt = contract.set(new Int256(15)).get();
-			System.out.println(receipt);
+			//TransactionReceipt receipt = contract.set(new Int256(15)).get();
+			//System.out.println(receipt);
 			Int256 balance = contract.getBalance().get();
 			System.out.println("Balance is: " + balance.getValue().intValueExact());
 			
