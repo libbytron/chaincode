@@ -34,10 +34,14 @@
                           Operator:
                         </div>
                         <div class="em-c-definition-list__value em-u-padding-bottom-none">
-                          <p class="em-u-margin-bottom-none uppercase">{{pba.company.name}} </p>
-                          <p class="em-u-margin-bottom-none">{{pba.company.address.street}} </p>
-                          <p class="em-u-margin-bottom-none">{{pba.company.address.city}}, {{pba.company.address.state}} {{pba.company.address.zip}} </p>
-                          <p class="em-u-margin-bottom-none">{{pba.company.address.country}} </p>
+                          <p class="em-u-margin-bottom-none em-u-padding-top-none uppercase">
+                            {{pba.company.name}} </p>
+                          <p class="em-u-margin-bottom-none em-u-padding-top-none">
+                            {{pba.company.address.street}} </p>
+                          <p class="em-u-margin-bottom-none em-u-padding-top-none">
+                            {{pba.company.address.city}}, {{pba.company.address.state}} {{pba.company.address.zip}} </p>
+                          <p class="em-u-margin-bottom-none em-u-padding-top-none">
+                            {{pba.company.address.country}} </p>
                         </div>
                       </li>
 
@@ -77,15 +81,50 @@
                             <table class="em-c-table ">
                                 <thead class="em-c-table__header">
                                     <tr class="em-c-table__header-row">
-                                        <th scope="col" class="em-c-table__header-cell ">wio</th>
+                                      <th scope="col" class="em-c-table__header-cell em-u-text-align-left">
+                                        wio
+                                      </th>
+                                      <th scope="col" class="em-c-table__header-cell em-u-text-align-right">
+                                        Current mo. entitlement
+                                      </th>
+                                      <th scope="col" class="em-c-table__header-cell em-u-text-align-right">
+                                        current mo. actuals
+                                      </th>
+                                      <th scope="col" class="em-c-table__header-cell em-u-text-align-right">
+                                        adjustment
+                                      </th>
+                                      <th scope="col" class="em-c-table__header-cell em-u-text-align-right">
+                                        current balance
+                                      </th>
                                     </tr>
                                     <!-- <em-c-></em-c->table__header-row -->
                                 </thead>
                                 <!-- end em-c-table__header -->
                                 <tbody>
+                                    <tr class="em-c-table__row em-u-text-align-right">
+                                      <td class="em-c-table__cell em-js-cell em-js-cell-editable em-u-text-align-left" colspan="">
+                                        Sally Sample
+                                      </td>
+                                      <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="">
+                                        Sally Sample
+                                      </td>
+                                      <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="">
+                                        Sally Sample
+                                      </td>
+                                      <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="">
+                                        Sally Sample
+                                      </td>
+                                      <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="">
+                                        Sally Sample
+                                      </td>
+                                    </tr>
+
                                     <tr ng-repeat="allocation in allocationList" class="em-c-table__row ">
-                                        <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="">
+
+                                        <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="" ui-sref="owners({ownerId: company.id })">
+
                                         </td>
+                                        <!-- <td>need to query back to find all contracts associated with this PBA</td> -->
                                     </tr>
                                     <!-- end em-c-table__row -->
                                 </tbody>
