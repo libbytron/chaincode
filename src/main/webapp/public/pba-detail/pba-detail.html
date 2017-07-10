@@ -9,9 +9,67 @@
     <main role="main">
         <div class="em-l-container">
             <div class="em-c-page-header ">
-                <!--<h1 class="em-c-page-header__title">PBA </h1>-->
-                <p class="em-c-page-header__desc">{{pba.id}}  {{pba.name}}</p>
-                <p>
+                <h1>{{pba.id}}  {{pba.name}}</h1>
+                <div class="em-u-display-flex date-picker em-u-margin-bottom">
+                  <svg class="em-c-icon em-c-icon--large">
+                    <use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="../unity-1.1.1/images/em-icons.svg#icon-calendar"></use>
+                  </svg>
+                  <!-- HARD CODED fix dates to pull from somewhere -->
+                  <h3 class="em-u-padding-left fpo-block">07/01/2017 - 07/31/2017 </h3>
+                </div>
+
+                <div class="em-u-display-flex">
+                  <div>
+                    <ul class="em-c-definition-list">
+                      <li class="em-c-definition-list__item">
+                        <div class="em-c-definition-list__key em-u-text-align-right em-u-padding-bottom-none">
+                          Product:
+                        </div>
+                        <div class="em-c-definition-list__value em-u-padding-bottom-none">
+                          {{pba.productType}}
+                        </div>
+                      </li>
+                      <li class="em-c-definition-list__item">
+                        <div class="em-c-definition-list__key em-u-text-align-right em-u-padding-bottom-none">
+                          Operator:
+                        </div>
+                        <div class="em-c-definition-list__value em-u-padding-bottom-none">
+                          {{pba.company.name}}
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li class="em-c-definition-list__item">
+                        <div class="em-c-definition-list__key em-u-text-align-right em-u-padding-bottom-none">
+                          Balancing Units:
+                        </div>
+                        <div class="em-c-definition-list__value em-u-padding-bottom-none">
+                          MCF @ {{pba.balancingUnits}}
+                        </div>
+                      </li>
+                      <li class="em-c-definition-list__item">
+                        <div class="em-c-definition-list__key em-u-text-align-right em-u-padding-bottom-none">
+                          Location:
+                        </div>
+                        <div class="em-c-definition-list__value em-u-padding-bottom-none">
+                          {{pba.address.city}}, {{pba.address.state}}
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- <div>
+                  <ul>
+                    <li>Location: {{pba.address.city}}, {{pba.address.state}}</li>
+                    <li>Owner: {{pba.company.name}}</li>
+                    <li>Product: {{pba.productType}} </li>
+                  </ul>
+                </div> -->
+                <!-- <p>
                     Location: {{pba.address.city}}, {{pba.address.state}} <br>
                 </p>
                 <p>
@@ -19,7 +77,7 @@
                 </p>
                 <p>
                     Product: {{pba.productType}} <br>
-                </p>
+                </p> -->
             </div>
             <br><br>
             <!-- end em-c-page-header -->
