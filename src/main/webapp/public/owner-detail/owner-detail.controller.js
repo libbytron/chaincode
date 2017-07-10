@@ -10,6 +10,7 @@
             $scope.owner = {};
 
             $scope.pbaList = [];
+            $scope.contractList = [];
 
             this.$onInit = function() {
                 $elasticsearch.getCompanyById($scope.ownerId).then(
@@ -23,7 +24,15 @@
                             $scope.pbaList.push(hits[i]);
                      }
                 )
+                $elasticsearch.getContractsBelongingToCompany($scope.ownerId).then(
+                     function(hits){
+                         for(var i = 0; i < hits.length; i++)
+                            $scope.contractList.push(hits[i]);
+                     }
+                )
             }
+
+
 
 
         }]);
