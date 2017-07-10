@@ -26,7 +26,8 @@ public class SmartContractTests {
 			Credentials credentials = 
 					WalletUtils.loadCredentials(
 							"Thebie-14-1", 
-							"C:\\home\\chaincode-projects\\bare-bones\\src\\main\\wallets\\myWallet.json");		
+							"/Users/aliciawilkin/Desktop/chaincode/chaincode/src/main/wallets/myWallet.json");
+//							"C:\\home\\chaincode-projects\\bare-bones\\src\\main\\wallets\\myWallet.json");		
 			System.out.println("Credentials loaded...");
 			
 
@@ -65,8 +66,8 @@ public class SmartContractTests {
 			Credentials credentials = 
 					WalletUtils.loadCredentials(
 							"Thebie-14-1", 
-							"C:\\home\\chaincode-projects\\bare-bones\\src\\main\\wallets\\myWallet.json");		
-			
+							"/Users/aliciawilkin/Desktop/chaincode/chaincode/src/main/wallets/myWallet.json");
+//							"C:\\home\\chaincode-projects\\bare-bones\\src\\main\\wallets\\myWallet.json");		d
 			System.out.println("Credentials loaded...");
 			
 			System.out.println(credentials.getAddress());
