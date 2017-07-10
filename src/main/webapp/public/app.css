@@ -77,6 +77,6 @@ html, body {
   color: #0C69B0;
 }
 
-/*.em-c-definition-list__key {
-  color: #f05822;
-}*/
+.uppercase {
+  text-transform: uppercase;
+}
