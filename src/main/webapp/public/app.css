@@ -80,3 +80,15 @@ html, body {
 .uppercase {
   text-transform: uppercase;
 }
+
+.exxon-gray {
+  color: darkgrey;
+}
+
+.abbrev {
+  font-weight: 400;
+}
+
+.align-bottom {
+  align-items: baseline;
+}
