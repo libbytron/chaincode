@@ -9,6 +9,7 @@ import org.web3j.crypto.WalletUtils;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.protocol.http.HttpService;
+import org.web3j.tx.TransactionManager;
 
 import com.smartcontracts.BankAccount;
 import com.smartcontracts.HelloWorld;
@@ -57,7 +58,7 @@ public class SmartContractTests {
 	{
 		try
 		{
-			Web3j web3 = Web3j.build(new HttpService("http://52.177.190.91:8545"));
+			Web3j web3 = Web3j.build(new HttpService("http://52.165.225.247:8545"));
 			
 			// "classpath:\\src\\main\\wallets\\myWallet.json" this doesnt work??
 			// !! LOCAL DEPENDENCY !!
@@ -65,15 +66,16 @@ public class SmartContractTests {
 					WalletUtils.loadCredentials(
 							"Thebie-14-1", 
 							"C:\\home\\chaincode-projects\\bare-bones\\src\\main\\wallets\\myWallet.json");		
+			
 			System.out.println("Credentials loaded...");
 			
 			System.out.println(credentials.getAddress());
+			
 
-			BankAccount contract = BankAccount.load("0x8f6f3a7b695ad12d1f5f4d234f640ac06793b439", web3, credentials, BigInteger.ZERO, BigInteger.valueOf(3000000));
+			BankAccount contract = BankAccount.load("0x8c94736782432a8a1434b7aaa2f9bf0486b06d8c", web3, credentials, BigInteger.valueOf(1000), BigInteger.valueOf(3000000));
 			System.out.println("Bank Account contract loaded...");
 			
-			// false for some reason.......?
-			System.out.println(contract.isValid());
+			System.out.println("Gas price:" + contract.getGasPrice());
 			
 			//TransactionReceipt receipt = contract.set(new Int256(15)).get();
 			//System.out.println(receipt);
