@@ -12,14 +12,10 @@
                 <!--<h1 class="em-c-page-header__title">PBA </h1>-->
                 <p class="em-c-page-header__desc">{{owner.name}}</p>
                 <p>
-                    Id: {{owner.id}} <br>
-                    Abbreviation: {{owner.abbreviation}} <br>
-                    Location: {{owner.address.city}}, {{owner.address.state}}
+                    Id: {{owner.id}} <br> Abbreviation: {{owner.abbreviation}} <br> Location: {{owner.address.city}}, {{owner.address.state}}
                 </p>
                 <p>
-                    Contact: {{owner.contact.name}} <br>
-                    Telephone: {{owner.contact.telephone}} <br>
-                    Email: {{owner.contact.email}}
+                    Contact: {{owner.contact.name}} <br> Telephone: {{owner.contact.telephone}} <br> Email: {{owner.contact.email}}
                 </p>
             </div>
             <br><br>
@@ -29,12 +25,12 @@
                     <div class="em-c-table-object__header">
                     </div>
                     <!--end em-c-table-object__header-->
-                    <div class="em-c-table-object__body" style="height:500px;overflow:auto;">
+                    <div class="em-c-table-object__body" style="height:500px;">
                         <div class="em-c-table-object__body-inner">
                             <table class="em-c-table ">
                                 <thead class="em-c-table__header">
                                     <tr class="em-c-table__header-row">
-                                        <th scope="col" class="em-c-table__header-cell ">PBA NO.</th>
+                                        <th scope="col" class="em-c-table__header-cell ">OPERATING PBAs</th>
                                     </tr>
                                     <!-- <em-c-></em-c->table__header-row -->
                                 </thead>
@@ -42,7 +38,7 @@
                                 <tbody>
                                     <tr ng-repeat="pba in pbaList" class="em-c-table__row ">
                                         <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="" ui-sref="pbas({ pbaId:pba.id, pbaName:pba.name })">
-                                            {{pba.id}}  {{pba.name}}
+                                            {{pba.id}} {{pba.name}}
                                         </td>
                                     </tr>
                                     <!-- end em-c-table__row -->
@@ -57,13 +53,43 @@
                             <!--end em-c-table-->
                         </div>
                         <!--end em-c-table-object__body-inner-->
+                        <br>
+                        <div class="em-c-table-object__body-inner" style="height:300px;overflow:auto;">
+                        <table class="em-c-table">
+                            <thead class="em-c-table__header">
+                                <tr class="em-c-table__header-row">
+                                    <th scope="col" class="em-c-table__header-cell ">PBA OWNERSHIP</th>
+                                </tr>
+                                <!-- <em-c-></em-c->table__header-row -->
+                            </thead>
+                            <!-- end em-c-table__header -->
+                            <tbody>
+                                <tr ng-repeat="contract in contractList" class="em-c-table__row ">
+                                    <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="" ui-sref="pbas({ pbaId:contract.pba.id, pbaName:contract.pba.name })">
+                                        {{contract.pba.id}} {{contract.pba.name}} {{contract.percentWorkingInterest}}
+                                    </td>
+                                </tr>
+                                <!-- end em-c-table__row -->
+                            </tbody>
+                            <!-- end em-c-table__body -->
+                            <tfoot class="em-c-table__footer">
+                                <tr class="em-c-table__footer-row">
+                                </tr>
+                            </tfoot>
+                            <!-- end em-c-table__footer -->
+                        </table>
+                        <!--end em-c-table-->
+                    </div>
+                    <!--end em-c-table-object__body-inner-->
                     </div>
                     <!--end em-c-table-object__body-->
                 </div>
                 <!--end em-c-table-object-->
             </div>
+
         </div>
         <!-- end pba table em-l-container -->
+
 
     </main>
 

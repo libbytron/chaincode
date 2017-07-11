@@ -27,6 +27,7 @@
             getPBAbyNameAndId: getPBAbyNameAndId,
             addContract: addContract,
             getAllContracts: getAllContracts,
+            getContractsBelongingToCompany: getContractsBelongingToCompany,
             addGasCollection: addGasCollection,
             getAllGasCollections: getAllGasCollections,
         };
@@ -199,6 +200,20 @@
                 function successCallback(data){
                     console.log(data);
                 });
+        }
+
+        function getContractsBelongingToCompany(companyId){
+            var searchQuery = {
+                query: {
+                    match: {
+                        "company.id": companyId
+                    }
+                }
+            }
+            return $http.post(elasticsearchURL + '/contracts/contract/_search', searchQuery).then(
+                function successCallback(response){
+                    return convertHitsToSource(response.data.hits.hits);
+            });
         }
 
         function getAllGasCollections(){

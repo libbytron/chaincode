@@ -125,7 +125,7 @@
 
             $scope.addContract = function(){
                 var contract = {};
-                $elasticsearch.addContract(contract);
+                $elasticsearch.addContract(contract[i]);
             }
 
             $scope.getAllContracts = function(){
