@@ -677,7 +677,7 @@ for (i=0; i<alertTriggers.length; i++) {
         use.setAttributeNS(
             'http://www.w3.org/1999/xlink', // xlink namespace URI
             'href', // attribute (no 'xlink:' required)
-            '../../images/em-icons.svg#icon-external-link'); // value to set
+            '/unity-1.1.1images/em-icons.svg#icon-external-link'); // value to set
         svg.appendChild(use); //Append <use> to <svg>
 
         el.appendChild(svg);
@@ -788,10 +788,10 @@ for (i=0; i<alertTriggers.length; i++) {
 	var icons = document.querySelectorAll('.em-js-icon'); //Get all icon shorthand instances
 
 	for (i=0; i<icons.length; i++) {
-		var iconPath = icons[i].getAttribute('data-icon-path') ? icons[i].getAttribute('data-icon-path') : "../../images/"; //Check for icon path  attribute. If one doesn't exist, fall back to default icon image path
+		var iconPath = icons[i].getAttribute('data-icon-path') ? icons[i].getAttribute('data-icon-path') : "/unity-1.1.1images/"; //Check for icon path  attribute. If one doesn't exist, fall back to default icon image path
 		var iconFile = icons[i].getAttribute('data-icon-file') ? icons[i].getAttribute('data-icon-file') : "em-icons.svg"; //Check for icon file attribute. If one doesn't exist, fall back to default icon file
 		var iconVal = icons[i].getAttribute('data-icon'); //This is the icon value, i.e. '#icon-search'
-		var iconFullPath = iconPath + iconFile + iconVal; //String together full path to icon, i.e. `../../images/em-icons.svg#icon-search`
+		var iconFullPath = iconPath + iconFile + iconVal; //String together full path to icon, i.e. `/unity-1.1.1images/em-icons.svg#icon-search`
 
 		var svg = document.createElementNS("http://www.w3.org/2000/svg","svg"); //Create new <svg> element
 		svg.setAttribute("class", "em-c-icon");  //Apply Unity icon class to element
