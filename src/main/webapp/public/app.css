@@ -92,3 +92,11 @@ html, body {
 .align-bottom {
   align-items: baseline;
 }
+
+.align-top {
+  align-items: baseline;
+}
+
+body, html {
+  height: auto !important; 
+}
