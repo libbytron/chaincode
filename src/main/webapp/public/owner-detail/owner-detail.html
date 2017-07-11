@@ -113,6 +113,7 @@
                       <thead class="em-c-table__header">
                         <tr class="em-c-table__header-row">
                           <th scope="col" class="em-c-table__header-cell ">PBA ownership</th>
+                          <th scope="col" class="em-c-table__header-cell ">% working interest</th>
                         </tr>
                         <!-- <em-c-></em-c->table__header-row -->
                       </thead>
@@ -120,7 +121,10 @@
                       <tbody>
                           <tr ng-repeat="contract in contractList" class="em-c-table__row ">
                               <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="" ui-sref="pbas({ pbaId:contract.pba.id, pbaName:contract.pba.name })">
-                                  {{contract.pba.id}} {{contract.pba.name}} {{contract.percentWorkingInterest}}
+                                  {{contract.pba.id}} {{contract.pba.name}}
+                              </td>
+                              <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="" ui-sref="pbas({ pbaId:contract.pba.id, pbaName:contract.pba.name })">
+                                {{contract.percentWorkingInterest}}
                               </td>
                           </tr>
                           <!-- end em-c-table__row -->
