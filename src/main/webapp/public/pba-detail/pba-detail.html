@@ -10,13 +10,34 @@
     <div class="em-l-container">
       <div class="em-c-page-header em-u-margin-bottom-double">
         <h1>{{pba.id}}  {{pba.name}}</h1>
-        <div class="em-u-display-flex date-picker em-u-margin-bottom">
-          <svg class="em-c-icon em-c-icon--large">
-            <use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="../unity-1.1.1/images/em-icons.svg#icon-calendar"></use>
-          </svg>
-          <!-- HARD CODED fix dates to pull from somewhere -->
-          <h3 class="em-u-padding-left fpo-block">07/01/2017 - 07/31/2017 </h3>
+        <div class="em-u-display-flex date-picker em-u-margin-bottom em-js-datepicker">
+            <svg class="em-c-icon em-c-icon--large">
+              <use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="../unity-1.1.1/images/em-icons.svg#icon-calendar"></use>
+            </svg>
+            <!-- HARD CODED fix dates to pull from somewhere -->
+            <div class="em-c-field--date-picker ">
+              <h3 class="em-u-padding-left fpo-block">07/01/2017 - 07/31/2017 </h3>
+            </div>
+          <!-- end div field-date-picker -->
+
         </div>
+
+
+        <div class="em-c-field em-c-field--date-picker">
+          <label for="date-1" class="em-c-field__label">Arrival Date</label>
+          <div class="em-c-field__body">
+           <input type="text" step "1" id="date-1" class="em-c-field__input em-js-datepicker" value="" />
+            <svg class="em-c-icon em-c-field__icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/unity-1.1.1/images/em-icons.svg#icon-calendar"></use>
+            </svg>
+          </div>
+          <!-- end em-c-field__body -->
+          <div class="em-c-field__note">Select the date of your arrival</div>
+        </div>
+        <!-- end em-c-field--date-picker -->
+
+
+
 
         <div class="em-u-display-flex">
           <div>
@@ -159,6 +180,38 @@
 
   <!-- Add unity JavaScript to bottom of body -->
   <script type="text/javascript" src="/unity-1.1.1/js/em-unity-1.1.1.min.js"></script>
+  <!-- <script type="text/javascript" src="/unity-1.1.1/js/vendor/pikaday.js"></script>
+  <script>
+    console.log('working');
+
+    var datePickers = document.querySelectorAll('.em-js-datepicker');
+    for (i=0; i < datePickers.length, i++)
+    {
+      var picker = new Pikaday(
+        {
+          field: datePickers[i]
+        });
+    }
+  </script> -->
+
+
+  <!-- IMPORTANT!
+       In script tag below, update the src to use the correct path to Unity's
+       js directory. For example:
+       http://example.com/unity-1.1.1/js/vendor/pikaday.js
+          Pikaday date picker script
+  -->
+  <script type="text/javascript" src="/unity-1.1.1/js/vendor/pikaday.js"></script>
+  <script>
+  var datePickers = document.querySelectorAll('.em-js-datepicker');
+  for (i = 0; i < datePickers.length; i++)
+  {
+    var picker = new Pikaday(
+    {
+      field: datePickers[i]
+    });
+  }
+  </script>
 
 </body>
 
