@@ -31,18 +31,18 @@
                             <table class="em-c-table ">
                                 <thead class="em-c-table__header">
                                     <tr class="em-c-table__header-row">
+                                        <th scope="col" class="em-c-table__header-cell ">ID No.</th>
                                         <th scope="col" class="em-c-table__header-cell ">Owners</th>
-                                        <th scope="col" class="em-c-table__header-cell em-u-text-align-right">ID No.</th>
                                     </tr>
                                     <!-- <em-c-></em-c->table__header-row -->
                                 </thead>
                                 <!-- end em-c-table__header -->
                                 <tbody>
                                     <tr ng-repeat="company in companyList" class="em-c-table__row ">
+                                      <td class="em-c-table__cell em-js-cell em-js-cell-editable " colspan="" ui-sref="owners({ ownerId: company.id })">{{ company.id }}</td>
                                         <td class="em-c-table__cell em-js-cell em-js-cell-editable" colspan="" ui-sref="owners({ ownerId: company.id })">
                                             {{company.name}} ({{company.abbreviation}})
                                         </td>
-                                        <td class="em-c-table__cell em-js-cell em-js-cell-editable em-u-text-align-right" colspan="" ui-sref="owners({ ownerId: company.id })">{{ company.id }}</td>
                                     </tr>
                                     <!-- end em-c-table__row -->
                                 </tbody>
